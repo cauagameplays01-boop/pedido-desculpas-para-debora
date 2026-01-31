@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Um Pedido Especial 💗</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #fde2e4, #e0f4f1);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #444;
+    }
+    .card {
+      background: #ffffffee;
+      max-width: 700px;
+      width: 90%;
+      padding: 40px;
+      border-radius: 25px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+      text-align: center;
+      animation: fadeIn 1.5s ease;
+    }
+    h1 {
+      color: #f28482;
+      font-size: 2.4rem;
+      margin-bottom: 15px;
+    }
+    p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      margin-bottom: 18px;
+    }
+    button {
+      background: #f28482;
+      border: none;
+      color: white;
+      padding: 15px 35px;
+      font-size: 1rem;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+    }
+    .page {
+      display: none;
+    }
+    .page.active {
+      display: block;
+    }
+    .hello {
+      font-size: 2rem;
+    }
+    .photos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+      margin: 25px 0;
+    }
+    .photos div {
+      background: #f8edeb;
+      border-radius: 15px;
+      padding: 30px;
+      font-size: 0.9rem;
+      color: #777;
+    }
+    audio {
+      margin-top: 20px;
+      width: 100%;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+
+    <!-- Página Inicial -->
+    <div id="inicio" class="page active">
+      <div class="hello">🎀🐱</div>
+      <h1>Antes de tudo…</h1>
+      <p>
+        Esse site foi criado especialmente para a Débora,
+        com muito carinho, cuidado e amor.
+      </p>
+      <p>
+        Quando você estiver pronta, aperta o botão abaixo.
+      </p>
+      <button onclick="mostrarPedido()">Entrar 💗</button>
+    </div>
+
+    <!-- Página do Pedido -->
+    <div id="pedido" class="page">
+      <div class="hello">🐱🎀</div>
+      <h1>Me desculpa 🤍</h1>
+      <p>
+        Hoje você trabalhou, ficou cansada, e mesmo assim tentou falar comigo.
+        Eu confundi o seu cansaço com frieza… e nisso eu vacilei.
+      </p>
+      <p>
+        Quero que você saiba que eu te valorizo muito.
+        Você é uma mulher maravilhosa, forte, incrível,
+        e merece sempre compreensão e cuidado.
+      </p>
+      <p>
+        Eu vou aprender com isso, ser melhor pra você
+        e te tratar do jeito que você merece.
+      </p>
+      <p>
+        E prometo: depois eu vou te comprar um lanche bem gostoso 💕🍔
+      </p>
+
+      <div class="photos">
+        <img src="foto1.jpg" alt="Nossa foto juntos" style="width:100%; border-radius:15px;">
+        <img src="foto2.jpg" alt="Nossa foto juntos" style="width:100%; border-radius:15px;">
+        <img src="foto3.jpg" alt="Nossa foto juntos" style="width:100%; border-radius:15px;">
+      </div>
+        <div>📷 Nossa foto 2</div>
+        <div>📷 Nossa foto 3</div>
+      </div>
+
+      <p>Essa música lembra você…</p>
+      <audio controls>
+        <source src="iwannabeyours.mp3" type="audio/mpeg">
+        Seu navegador não suporta áudio.
+      </audio>
+
+      <button style="margin-top:25px; background:#84c7ae;" onclick="mostrarPerdao()">Eu te perdoo 🤍</button>
+      <p id="perdao" style="display:none; margin-top:20px; font-weight:bold; color:#2a9d8f;">
+        Obrigado por me perdoar. Prometo cuidar de você melhor, sempre. 🫶
+      </p>
+    </div>
+
+  </div>
+
+  <script>
+    function mostrarPedido() {
+      document.getElementById('inicio').classList.remove('active');
+      document.getElementById('pedido').classList.add('active');
+    }
+
+    function mostrarPerdao() {
+      document.getElementById('perdao').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
